@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <!-- Meta Tag -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO -->
+    <meta name="Django REST-ful" content="pradeep sharma personal website">
+    <meta name="author" content="Pradeep Sharma">
+    <meta name="url" content="http://pradeepsharma2004.github.io">
+    <meta name="copyright" content="Pradeep pradeep-sharma-2499a8128">
+    <meta name="robots" content="index,follow">
+
+
+    <title>Django Api Blog</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon/coder.png">
+    <link rel="apple-touch-icon" sizes="144x144" type="image/x-icon" href="images/favicon/coder.png">
+
+    <!-- All CSS Plugins -->
+    <link rel="stylesheet" type="text/css" href="css/plugin.css">
+
+    <!-- Main CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Google Web Fonts  -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700">
+
+    <!-- Syntax Highlighter  -->
+    <link rel="stylesheet" type="text/css" href="css/syntax/shCore.css">
+    <link rel="stylesheet" type="text/css" href="css/syntax/shThemeDefault.css">
+
+
+  </head>
+
+ <body>
+
+
+
+	 <!-- Preloader Start -->
+     <div class="preloader">
+	   <div class="rounder"></div>
+      </div>
+      <!-- Preloader End -->
+
+
+
+
+    <div id="main">
+        <div class="container">
+            <div class="row">
+
+
+
+                 <!-- About Me (Left Sidebar) Start -->
+                 <div class="col-md-3">
+                   <div class="about-fixed">
+
+                     <div class="my-pic">
+                        <a href="index.html"><i><img src="images/pic/pradeep.jpg" alt=""></i></a>
+                        <a href="javascript:void(0)" class="collapsed" data-target="#menu" data-toggle="collapse"><i class="icon-menu menu"></i></a>
+                         <div id="menu" class="collapse">
+                           <ul class="menu-link">
+                               <li><a href="about.html">About</a></li>
+                               <li><a href="work.html">Work</a></li>
+                               <li><a href="contact.html">Contact</a></li>
+                               <li><a href="Gallery.html">Photos</a></li>
+                            </ul>
+                         </div>
+                        </div>
+
+
+
+                      <div class="my-detail">
+
+                        <div class="white-spacing">
+                            <h1>Pradeep Sharma</h1>
+                            <span>Full Stack Web Developer</span>
+                        </div>
+
+                       <ul class="social-icon">
+                        <li><a href="https://www.facebook.com/Technophile2004/" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a></li>
+
+                         <li><a href="https://twitter.com/Technophile2004" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a></li>
+
+                         <li><a href="https://www.linkedin.com/in/pradeep-sharma-2499a8128/" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+
+                         <li><a href="https://github.com/pradeepsharma2004" target="_blank" class="github"><i class="fa fa-github"></i></a></li>
+                        </ul>
+
+                    </div>
+                  </div>
+                </div>
+                <!-- About Me (Left Sidebar) End -->
+
+
+
+
+
+                 <!-- Blog Post (Right Sidebar) Start -->
+                 <div class="col-md-9">
+                    <div class="col-md-12 page-body">
+                    	<div class="row">
+
+
+                            <div class="sub-title">
+                           		<a href="index.html" title="Go to Home Page"><h2>Back Home</h2></a>
+                                <a href="#comment" class="smoth-scroll"><i class="icon-bubbles"></i></a>
+                             </div>
+
+
+                            <div class="col-md-12 content-page">
+                              <div class="col-md-12 blog-post">
+                                <div class="post-image">
+                                      <img src="images/TechnicalBlog/cover.png" alt="">
+                                    </div>
+
+
+                                <!-- Post Headline Start -->
+                                <div class="post-title">
+                                    <h1>Creating a Django API in 10 Minutes</h1>
+                                   </div>
+                                   <!-- Post Headline End -->
+
+
+                                <!-- Post Detail Start -->
+                                <div class="post-info">
+                                    <span>Janurary 12, 2018 / by <a href="#" target="_blank">Pradeep Sharma</a></span>
+                                   </div>
+                                   <!-- Post Detail End -->
+
+
+                                  <p> Django is by far the most popular Python framework,   designed to provide Rails-like ease of use. Let’s see how quickly we can set up a simple API using Django and a library called TastyPie.
+                                  </p>
+
+                                  <p>
+                                    <b>Who This Tutorial Is For:</b> You should have a basic understanding of REST APIs and CRUD operations. Python knowledge is a plus but not necessary. You’ll pick it up.
+                                  </p>
+
+                                  <p>
+                                    We’ll be building an API for a Google Keep-esque note-taking web app. We want to build a REST-ful API with the CRUD endpoints, to create, read, update, and delete notes. The good news is that rather than approach these endpoints individually, Django lets us more or less create them all in one fell swoop.
+                                  </p>
+
+                                  <h2>Setting Up Our Project</h3>
+                                    <p>
+                                      Django divides your work into projects and apps. Projects contain apps, but apps do not necessarily belong to a certain project — the idea is to make them reusable across projects.
+                                    </p>
+
+                                    <p>
+                                      We’ll only be making one app within one project, but the file structure may seem a little odd if you don’t keep this in mind.
+                                    </p>
+                                    <p>
+                                      <a href="https://www.python.org/downloads/">Install Python</a> if you haven’t done so, then let’s install Django and create our project:
+                                    </p>
+
+                                    <blockquote class="margin-top-40 margin-bottom-40">
+                                    <p>
+                                      <pre>
+pip install Django
+django-admin startproject notable_django
+cd notable_django
+                                     </pre>
+                                     </p>
+                                   </blockquote>
+
+                                   <p>
+                                     Next we’ll install <a href="https://github.com/django-tastypie/django-tastypie">TastyPie</a>, which will supply us with a REST framework.
+                                   </p>
+
+                                   <blockquote class="margin-top-40 margin-bottom-40">
+                                       <p><pre>
+pip install django-tastypie</pre>
+                                       </p>
+                                   </blockquote>
+
+                                   <p>
+                                     Finally, we can start our app within our project:
+                                   </p>
+
+                                   <blockquote class="margin-top-40 margin-bottom-40">
+                                       <p><pre>
+python manage.py startapp api</pre>
+                                       </p>
+                                   </blockquote>
+
+                                   <p>
+                                     Within your notable_django directory, you should now have two subfolders: one also called notable_django, and another named api (as well as a manage.py file).
+                                   </p>
+
+                                   <p>
+                                     The distinction between the two can be thought of like this: the notable_django contains the settings for the configuration of the project, as well as exposing URLs. The api folder handles the actual API magic.
+                                   </p>
+
+                                   <p>
+                                     Before we go on, we have to install our app within our project, inside notable_django/settings-py:
+                                   </p>
+
+                                   <blockquote class="margin-top-40 margin-bottom-40">
+                                       <p>
+                                       <pre>
+# notable_django/settings.py
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'api'
+]
+                                       </pre>
+                                       </p>
+                                   </blockquote>
+
+                                   <p>
+                                     Again, our project can have multiple apps installed — and those apps aren’t necessarily tied to that project. Our project here is notable_django, and our app is called api.
+                                   </p>
+
+                                   <p>
+                                     With that done, we’re ready to start building.
+                                   </p>
+
+                                   <h2>A Model Start</h2>
+                                   <p>
+                                     The first thing we need to create is a Note model to interact with.
+                                   </p>
+
+                                   <p>
+                                     For those unfamiliar with models, this description from the Django docs is as good as any:
+                                   </p>
+
+                                   <blockquote class="margin-top-40 margin-bottom-40">
+                                       <p>
+                                       A model is the single, definitive source of information about your data. It contains the essential fields and behaviors of the data you’re storing. Generally, each model maps to a single database table.
+                                       </p>
+                                   </blockquote>
+
+                                   <p>
+                                     Django is unique (compared to a framework like Ruby on Rails) in that your migrations follow how you define your models, rather than being separately defined.
+                                   </p>
+
+                                   <p>
+                                     We’re going to create our Note model, and then run our migrations, which will set up our database with a notes table (with all the appropriate fields).
+                                   </p>
+
+                                   <p>
+                                     Let’s create our model, in api/models.py
+                                   </p>
+
+                                   <blockquote class="margin-top-40 margin-bottom-40">
+                                       <p><pre>
+# api/models.py
+class Note(models.Model):
+    title = models.CharField(max_length=200)
+    body = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+                                       </pre></p>
+                                   </blockquote>
+
+                                   <p>
+                                     We define our fields, along with the type of each.
+                                   </p>
+
+                                   <p>
+                                    The next thing we want to do is add a __str__ method to the model. This method defines what we get when we ask for a particular instance of a model.
+                                   </p>
+
+                                   <p>
+                                     For example, this:
+                                   </p>
+
+                                   <blockquote class="margin-top-40 margin-bottom-40">
+                                       <pre>
+# api/models.py
+class Note(models.Model):
+    title = models.CharField(max_length=200)
+    body = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+def __str__(self):
+        return self.title
+                                       </pre>
+                                   </blockquote>
+
+                                   <p>
+                                     … means that when we grab any Note model, we’ll get back only the title. This just keeps things clean. (We will only be interacting with our models in this manner through the Python shell, so it’s not super necessary, but good to be aware of).
+                                   </p>
+
+                                   <p>
+                                   Let’s expand our __str__ method to also include the body:</p>
+
+                                   <blockquote class="margin-top-40 margin-bottom-40">
+                                       <pre>
+# api/models.py
+class Note(models.Model):
+    title = models.CharField(max_length=200)
+    body = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+def __str__(self):
+        return '%s %s' % (self.title, self.body)
+                                       </pre>
+                                   </blockquote>
+
+                                   <p>
+                                     Okay, our model is all set up. Now to run our migrations, which will set up our database.
+                                   </p>
+                                   <blockquote class="margin-top-40 margin-bottom-40">
+                                       <pre>
+ python manage.py makemigrations
+ python manage.py migrate
+                                       </pre>
+                                   </blockquote>
+
+                                   <p>
+                                     Let’s go ahead and populate our database with a single note, to make sure all is well:
+                                   </p>
+
+
+                                   <blockquote class="margin-top-40 margin-bottom-40">
+                                       <pre>python manage.py shell
+>>> from api.models import Note
+>>> note = Note(title="First Note", body="This is certainly noteworthy")
+>>> note.save()
+>>> Note.objects.all()
+<QuerySet [<Note: First Note This is certainly noteworthy>]>
+>>> exit()
+                                       </pre>
+                                   </blockquote>
+
+                                   <p>
+                                     We create our note, save it, then retrieve all notes. You can see our __str__ method at work, returning both the title and the body.
+                                   </p>
+
+                                   <p>
+                                     (If you want to learn more about the Note.objects manager, <a href="https://docs.djangoproject.com/en/1.10/topics/db/managers/#django.db.models.Manager">see here</a>).
+                                   </p>
+
+                                   <h2>API-ification</h2>
+
+                                   <p>
+                                     Okay, so our model and database are all ready to go. Now to expose some endpoints to the wider world, so we can interact with our data.
+                                   </p>
+
+                                   <p>
+                                     One of the basics of RESTful APIs is the idea of resources. The term is rather abstract, but in this context it refers to a class that sits between our URLs and our models.
+                                   </p>
+
+                                   <p>
+                                     A user will make a request to an endpoint. Depending on the URL, the user will be redirected to a particular resource, which will then perform the appropriate CRUD action on the model.
+                                   </p>
+
+                                   <p>
+                                     Again, this is a simplified explanation of a complex topic — let’s go ahead and see it in practice:
+                                   </p>
+
+                                   <p>
+                                     In your api folder, create a new file called resources.py.
+                                   </p>
+
+                                   <blockquote class="margin-top-40 margin-bottom-40">
+                                       <pre>
+# api/resources.py
+from tastypie.resources import ModelResource
+from api.models import Note
+class NoteResource(ModelResource):
+    class Meta:
+        queryset = Note.objects.all()
+        resource_name = 'note'</pre>
+                                   </blockquote>
+                                   <p>
+                                     We import our model, and create a resource from it. The queryset (what models the resource is concerned with) is all note objects.
+                                   </p>
+
+                                   <p>
+                                     We also name the resource appropriately: ‘note’. This will be important for URLs.
+                                   </p>
+
+                                   <p>
+                                     Speaking of which, let’s set those up in our notable_django/urls.py file:
+                                   </p>
+
+                                   <blockquote class="margin-top-40 margin-bottom-40">
+                                       <pre>
+from django.conf.urls import url, include
+from django.contrib import admin
+from api.resources import NoteResource
+note_resource = NoteResource()
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^api/', include(note_resource.urls)),
+]
+                                       </pre>
+                                   </blockquote>
+
+                                   <p>
+                                     We import our NoteResource, instantiate it, and then say that we want all URLs that start with api/ to redirect to the resource. (Don’t forget to import include from django.conf.urls).
+                                   </p>
+
+                                   <h2>Testing Our API</h2>
+                                   <p>
+                                     Finally, we can get running. As in the Node tutorial, we’re going to use Postman to make API requests. You can get it here.
+                                   </p>
+                                   <blockquote class="margin-top-40 margin-bottom-40">
+                                     <p>
+                                       python manage.py runserver
+                                     </p>
+                                   </blockquote>
+
+                                   <p>
+                                     Now in Postman, let’s send a GET request to this URL: <u>http://localhost:8000/api/note/1</u>
+                                   </p>
+
+                                   <blockquote class="margin-top-40 margin-bottom-40">
+                                   <img src="images/TechnicalBlog/postman.png">
+                                   </blockquote>
+
+                                   <p>
+                                     Great! Our GET endpoint is working perfectly. Easy.
+                                     <br><br>Now let’s try to create a new note from Postman.
+                                   </p>
+
+                                   <h2>POST, PUT, DELETE</h2>
+
+                                   <p>
+                                     We’re going to send a raw JSON object as our new note, like so:
+                                   </p>
+
+                                   <blockquote class="margin-top-40 margin-bottom-40">
+                                   <img src="images/TechnicalBlog/postman1.png">
+                                   </blockquote>
+
+                                   <p>
+                                     Make sure you select JSON from the orange dropdown there! This will set a Content-Type header (which you can view under the Headers tab).<br><br>
+
+                                     Also make sure you send the request to <u>http://localhost:8000/api/note/</u>, not <u>http://localhost:8000/api/note</u>. That trailing slash is important, since otherwise Django has to redirect you, losing the POST data.<br><br>
+
+                                    Send that request and… it fails. We get back a 401, AKA Unauthorized.<br><br>
+                                    TastyPie is protective of its models out of the box, and only allows reading, not modifying, the data.
+                                    <br><br>
+                                    It’s an easy fix, though — import their basic Authorization class, and add it to our resource.
+                                   </p>
+
+                                   <blockquote class="margin-top-40 margin-bottom-40">
+                                     <pre>
+# api/resources.py
+from tastypie.resources import ModelResource
+from api.models import Note
+from tastypie.authorization import Authorization
+class NoteResource(ModelResource):
+    class Meta:
+        queryset = Note.objects.all()
+        resource_name = 'note'
+        authorization = Authorization()
+                                     </pre>
+                                   </blockquote>
+
+                                   <p>
+                                     Now it works! Try the request, and we get back 201, AKA success!<br><br>
+                                     To double check, you can send a GET request to <u>http://localhost:8000/api/note</u>. You should get back both notes.<br><br>
+                                     Important warning: the Authorization class with TastyPie is, in their words, great for development — but not suitable for actual deployment. You can dive deeper into TastyPie authorization <a href="http://django-tastypie.readthedocs.io/en/latest/authorization.html">here</a>.
+                                   </p>
+
+                                   <h2>All the Endpoints</h2>
+                                   <p>
+                                     Okay, so we finished our GET and POST endpoints. What about PUT and DELETE?<br><br>
+                                     Well, the magic of TastyPie is that they’re already done. Try updating or deleting your first note by ending PUT or DELETE to <u>http://localhost:8000/api/note/1/</u>. It just works!<br><br>
+                                     Just like that, we created a working RESTful API.
+                                   </p>
+
+                                   <h2>Limiting Fields</h2>
+                                   <p>
+                                     If you wanted to only send specific information about a resource, you can limit fields like so:
+                                   </p>
+
+                                   <blockquote class="margin-top-40 margin-bottom-40">
+                                     <pre>
+from tastypie.resources import ModelResource
+from api.models import Note
+from tastypie.authorization import Authorization
+class NoteResource(ModelResource):
+    class Meta:
+        queryset = Note.objects.all()
+        resource_name = 'note'
+        authorization = Authorization()
+        fields = ['title', 'body']
+                                     </pre>
+                                   </blockquote>
+
+                                   <p>
+                                     Now you won’t see our created_at field in any requests.
+                                   </p>
+                                   <h2>Final Notes</h2>
+                                   <p>
+                                     Thanks for reading. If this tutorial has been helpful, please recommend it by clicking the green heart below. Even better, share it with your friends and fellow devs.<br><br>
+                                     You can also follow me for more tutorials and guides. And, as always, please leave any feedback or questions in the comments!
+                                   </p>
+                                </div>
+                             </div>
+                         </div>
+
+
+                        <!-- Subscribe Form Start -->
+                        <div class="col-md-8 col-md-offset-2">
+                           <form action="https://docs.google.com/forms/d/e/1FAIpQLSdUR4R4Yb6E-ZPN8bvTeCmXK0vpniRZpkNfrJ3x9BJrZ6RCQg/formResponse" target="_self" method="POST" id="mG61Hd">
+
+						  <div class="subscribe-form margin-top-20">
+							 <input id="mc-email" type="email" name="emailAddress" placeholder="Email Address" class="text-input">
+							  <button class="submit-btn" type="submit">Submit</button>
+								</div>
+                <center><p>Subscribe to my weekly newsletter</p></center>
+								<label for="mc-email" class="mc-label"></label>
+							  </form>
+
+                           </div>
+                           <!-- Subscribe Form End -->
+
+
+                         </div>
+
+
+
+                       <!-- Footer Start -->
+                       <div class="col-md-12 page-body margin-top-50 footer">
+                          <footer>
+                          <ul class="menu-link">
+                               <li><a href="index.html">Home</a></li>
+                               <li><a href="about.html">About</a></li>
+                               <li><a href="work.html">Work</a></li>
+                               <li><a href="contact.html">Contact</a></li>
+                               <li><a href="Gallery.html">Photos</a></li>
+                            </ul>
+
+                          <p>© Copyright 2016 Pradeep Sharma. All rights reserved</p>
+
+
+                          <div>Design By <a href="http://www.aryanarjunsharma.tk" target="_blank">Pradeep Sharma</a></div>
+
+
+
+                         </footer>
+                       </div>
+                       <!-- Footer End -->
+
+
+                  </div>
+                  <!-- Blog Post (Right Sidebar) End -->
+
+            </div>
+         </div>
+      </div>
+
+
+
+
+     <!-- Endpage Box (Popup When Scroll Down) Start -->
+     <div id="scroll-down-popup" class="endpage-box">
+       <h4>Read Also</h4>
+       <a href="#">How to make your company website based on bootstrap framework...</a>
+      </div>
+      <!-- Endpage Box (Popup When Scroll Down) End -->
+
+
+
+
+    <!-- Back to Top Start -->
+    <a href="#" class="scroll-to-top"><i class="fa fa-long-arrow-up"></i></a>
+    <!-- Back to Top End -->
+
+
+    <!-- All Javascript Plugins  -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/plugin.js"></script>
+
+    <!-- Main Javascript File  -->
+    <script type="text/javascript" src="js/scripts.js"></script>
+
+    <!-- Syntax Highlighter Javascript File  -->
+    <script type="text/javascript" src="js/syntax/shCore.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushCss.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushJScript.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushPerl.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushPhp.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushPlain.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushPython.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushRuby.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushSql.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushVb.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushXml.js"></script>
+
+	<!-- Syntax Highlighter Call Function -->
+	<script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = 'js/syntax/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+
+
+   </body>
+ </html>
